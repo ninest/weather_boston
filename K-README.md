@@ -1,14 +1,20 @@
-Boston Weather, last updated 00:53.
+Boston Weather, last updated 01:1.
 
-# ☁️ Overcast clouds, 288.06ºK
+# ☁️ Overcast clouds, 288.02ºK
 
-Feels like 287.85ºK
+Feels like 287.83ºK
 
 |  | Temperature |
 | -- | -- |
-| High | 290.04ºK |
-| Low | 285.4ºK |
+| High | 289.81ºK |
+| Low | 285.27ºK |
 
+## Sun
+
+| | Time | Human |
+| -- | -- |
+| Rise | 06:50 | 5 hours from now |
+| Set | 18:12 | 17 hours from now |
 
 ## Build setup
 

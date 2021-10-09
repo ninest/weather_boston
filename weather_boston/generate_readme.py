@@ -1,4 +1,5 @@
 import datetime
+import humanize
 from weather_boston.emoji import weather_emoji
 from weather_boston.open_weather_map import WeatherData
 from .temperature import kelvin_to_celcius, temperature_display
@@ -35,6 +36,16 @@ class README:
             self.temperature_unit, self.weather.temperature_feels_like
         )
 
+        sunrise_display_time = self.weather.sunrise.strftime("%H:%-M")
+        sunrise_natural_time = humanize.naturaltime(
+            datetime.datetime.now() - self.weather.sunrise
+        )
+
+        sunset_display_time = self.weather.sunset.strftime("%H:%-M")
+        sunset_natural_time = humanize.naturaltime(
+            datetime.datetime.now() - self.weather.sunset
+        )
+
         return f"""Boston Weather, last updated {display_time}.
 
 # {description}, {temperature}
@@ -46,6 +57,12 @@ Feels like {temperature_feels_like}
 | High | {temperature_max} |
 | Low | {temperature_min} |
 
+## Sun
+
+| | Time | Human |
+| -- | -- |
+| Rise | {sunrise_display_time} | {sunrise_natural_time} |
+| Set | {sunset_display_time} | {sunset_natural_time} |
 
 ## Build setup
 

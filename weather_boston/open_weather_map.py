@@ -10,12 +10,16 @@ from weather_boston.temperature import kelvin_to_celcius, kelvin_to_farenheit
 @dataclass
 class WeatherData:
     generation_time: datetime.datetime
-    description: str
-    temperature: float
 
+    description: str
+
+    temperature: float
     temperature_min: float
     temperature_max: float
     temperature_feels_like: float
+
+    sunrise: datetime.datetime
+    sunset: datetime.datetime
 
 
 class OpenWeatherMap:
@@ -40,6 +44,8 @@ class OpenWeatherMap:
             temperature_max=data["main"]["temp_max"],
             temperature_min=data["main"]["temp_min"],
             temperature_feels_like=data["main"]["feels_like"],
+            sunrise=datetime.datetime.fromtimestamp(data["sys"]["sunrise"]),
+            sunset=datetime.datetime.fromtimestamp(data["sys"]["sunset"]),
         )
 
     def fetch(self):
