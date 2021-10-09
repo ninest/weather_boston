@@ -1,3 +1,4 @@
+from weather_boston.emoji import weather_emoji
 from weather_boston.open_weather_map import WeatherData
 from .temperature import kelvin_to_celcius, temperature_display
 
@@ -25,7 +26,11 @@ class README:
         return self
 
     def generate(self):
+        emojis = weather_emoji(self.description)
         description = self.description.capitalize()
+        if emojis:
+            description = f"{emojis} {description}"    
+
         temperature = temperature_display(self.temperature_unit, self.temperature)
         temperature_min = temperature_display(
             self.temperature_unit, self.temperature_min
@@ -39,7 +44,9 @@ class README:
 
         return f"""Boston Weather, last updated now.
 
-> {description}, {temperature}
+# {description}, {temperature}
+
+Feels like {temperature_feels_like}
 
 |  | Temperature |
 | -- | -- |
@@ -66,48 +73,3 @@ python -m weather_boston
 ```
 """
 
-
-def generate_readme(
-    description,
-    temperature_unit,
-    temperature,
-    temperature_min,
-    temperature_max,
-    temperature_feels_like,
-):
-
-    temperature = temperature_display(temperature_unit, temperature)
-    temperature_min = temperature_display(temperature_unit, temperature_min)
-    temperature_max = temperature_display(temperature_unit, temperature_max)
-    temperature_feels_like = temperature_display(
-        temperature_unit, temperature_feels_like
-    )
-
-    return f"""Boston Weather, last updated now.
-
-> {description}, {temperature}
-
-|  | Temperature |
-| -- | -- |
-| High | {temperature_max} |
-| Low | {temperature_min} |
-
-
-## Build setup
-
-Install [pyenv](https://github.com/pyenv/pyenv), then clone or fork the repository. Run
-
-
-```shell
-pyenv virtualenv 3.9.5 weather-boston-venv-venv
-
-pyenv activate
-pip install -r requirements.txt
-```
-
-To generate the README, run
-
-```shell
-python -m weather_boston
-```
-"""

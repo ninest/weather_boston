@@ -4,7 +4,7 @@ from weather_boston.file import write_files
 from .temperature import temperature_display
 from .settings import API_KEY
 from .open_weather_map import OpenWeatherMap
-from .generate_readme import README, generate_readme
+from .generate_readme import README
 
 
 lat = 42.3474595
