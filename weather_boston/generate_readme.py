@@ -1,3 +1,4 @@
+import datetime
 from weather_boston.emoji import weather_emoji
 from weather_boston.open_weather_map import WeatherData
 from .temperature import kelvin_to_celcius, temperature_display
@@ -19,6 +20,7 @@ class README:
         self.temperature_feels_like = temperature_feels_like
 
         self.temperature_unit = "K"
+        self.generation_time = datetime.datetime.now()
 
     def set_temperature_unit(self, unit):
         self.temperature_unit = unit
@@ -26,6 +28,8 @@ class README:
         return self
 
     def generate(self):
+        display_time = self.generation_time.strftime("%H:%-M")
+
         emojis = weather_emoji(self.description)
         description = self.description.capitalize()
         if emojis:
@@ -42,7 +46,7 @@ class README:
             self.temperature_unit, self.temperature_feels_like
         )
 
-        return f"""Boston Weather, last updated now.
+        return f"""Boston Weather, last updated {display_time}.
 
 # {description}, {temperature}
 

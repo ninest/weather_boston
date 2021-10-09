@@ -10,7 +10,6 @@ def weather_emoji(description: str):
 
     emojis = ""
     for key in emoji_map:
-        print(key,description)
         if key in description:
             emojis += emoji_map[key]
     return emojis
