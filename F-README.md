@@ -1,13 +1,13 @@
-Boston Weather, last updated 00:45.
+Boston Weather, last updated 00:53.
 
-# ☁️ Overcast clouds, 58.9ºF
+# ☁️ Overcast clouds, 58.8ºF
 
 Feels like 58.5ºF
 
 |  | Temperature |
 | -- | -- |
-| High | 54.0ºF |
-| Low | 62.4ºF |
+| High | 62.4ºF |
+| Low | 54.0ºF |
 
 
 ## Build setup

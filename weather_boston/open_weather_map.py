@@ -1,3 +1,4 @@
+import datetime
 from os import terminal_size
 from typing import Union
 import requests
@@ -8,7 +9,7 @@ from weather_boston.temperature import kelvin_to_celcius, kelvin_to_farenheit
 
 @dataclass
 class WeatherData:
-
+    generation_time: datetime.datetime
     description: str
     temperature: float
 
@@ -33,6 +34,7 @@ class OpenWeatherMap:
         data = self.fetch()
 
         return WeatherData(
+            generation_time=datetime.datetime.now(),
             description=data["weather"][0]["description"],
             temperature=data["main"]["temp"],
             temperature_max=data["main"]["temp_max"],

@@ -5,45 +5,34 @@ from .temperature import kelvin_to_celcius, temperature_display
 
 
 class README:
-    def __init__(
-        self,
-        description,
-        temperature,
-        temperature_min,
-        temperature_max,
-        temperature_feels_like,
-    ):
-        self.description = description
-        self.temperature = temperature
-        self.temperature_min = temperature_min
-        self.temperature_max = temperature_max
-        self.temperature_feels_like = temperature_feels_like
-
+    def __init__(self, generation_time, weather: WeatherData):
+        self.generation_time = generation_time
+        self.weather = weather
         self.temperature_unit = "K"
-        self.generation_time = datetime.datetime.now()
 
     def set_temperature_unit(self, unit):
         self.temperature_unit = unit
-
         return self
 
     def generate(self):
         display_time = self.generation_time.strftime("%H:%-M")
 
-        emojis = weather_emoji(self.description)
-        description = self.description.capitalize()
+        emojis = weather_emoji(self.weather.description)
+        description = self.weather.description.capitalize()
         if emojis:
-            description = f"{emojis} {description}"    
+            description = f"{emojis} {description}"
 
-        temperature = temperature_display(self.temperature_unit, self.temperature)
+        temperature = temperature_display(
+            self.temperature_unit, self.weather.temperature
+        )
         temperature_min = temperature_display(
-            self.temperature_unit, self.temperature_min
+            self.temperature_unit, self.weather.temperature_min
         )
         temperature_max = temperature_display(
-            self.temperature_unit, self.temperature_max
+            self.temperature_unit, self.weather.temperature_max
         )
         temperature_feels_like = temperature_display(
-            self.temperature_unit, self.temperature_feels_like
+            self.temperature_unit, self.weather.temperature_feels_like
         )
 
         return f"""Boston Weather, last updated {display_time}.
@@ -76,4 +65,3 @@ To generate the README, run
 python -m weather_boston
 ```
 """
-
