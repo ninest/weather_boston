@@ -1,4 +1,6 @@
 from os import read
+
+from weather_boston.file import write_files
 from .temperature import temperature_display
 from .settings import API_KEY
 from .open_weather_map import OpenWeatherMap
@@ -24,13 +26,10 @@ c_readme = readme.set_temperature_unit("C").generate()
 f_readme = readme.set_temperature_unit("F").generate()
 
 
-file = open("./README.md", "w")
-file.write(c_readme)
-file.close()
-
-file = open("./F-README.md", "w")
-file.write(f_readme)
-file.close()
-file = open("./K-README.md", "w")
-file.write(k_readme)
-file.close()
+write_files(
+    [
+        ["./README.md", c_readme],
+        ["./F-README.md", f_readme],
+        ["./K-README.md", k_readme],
+    ]
+)
