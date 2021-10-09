@@ -1,11 +1,11 @@
 Boston Weather, last updated now.
 
-> Overcast clouds, 15.0ºC
+> Overcast clouds, 288.11ºK
 
 |  | Temperature |
 | -- | -- |
-| High | 12.4ºC |
-| Low | 16.9ºC |
+| High | 285.59ºK |
+| Low | 290.04ºK |
 
 
 ## Build setup

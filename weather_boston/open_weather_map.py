@@ -1,5 +1,20 @@
-from typing import TypedDict
+from os import terminal_size
+from typing import Union
 import requests
+from dataclasses import dataclass
+
+from weather_boston.temperature import kelvin_to_celcius, kelvin_to_farenheit
+
+
+@dataclass
+class WeatherData:
+
+    description: str
+    temperature: float
+
+    temperature_min: float
+    temperature_max: float
+    temperature_feels_like: float
 
 
 class OpenWeatherMap:
@@ -16,17 +31,16 @@ class OpenWeatherMap:
     def get_weather(self):
         self.url = f"weather?lat={self.lat}&lon={self.lon}&appid={self.api_key}"
         data = self.fetch()
-        return {
-            "description": data["weather"][0]["description"],
-            "temperature": {
-                "current": data["main"]["temp"],
-                "max": data["main"]["temp_max"],
-                "min": data["main"]["temp_min"],
-                "feels_like": data["main"]["feels_like"],
-            },
-        }
+
+        return WeatherData(
+            description=data["weather"][0]["description"],
+            temperature=data["main"]["temp"],
+            temperature_max=data["main"]["temp_max"],
+            temperature_min=data["main"]["temp_min"],
+            temperature_feels_like=data["main"]["feels_like"],
+        )
 
     def fetch(self):
-        full_url=self.url_base + self.url
+        full_url = self.url_base + self.url
         request = requests.get(full_url)
         return request.json()
