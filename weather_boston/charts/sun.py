@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from weather_boston.time import format_time, time_to_float
 
 plt.style.use("./style/minim.mplstyle")
-plt.style.use("./style/minim-dark.mplstyle")
+plt.style.use('./style/minim-dark.mplstyle')
 
 
 def generate_sunrise_sunset_chart(
@@ -17,8 +17,13 @@ def generate_sunrise_sunset_chart(
     fig, ax = plt.subplots()
 
     # The bar should shart at sunrise and end at sunset
-
+    # Black bar showing sunset
+    ax.barh([1], [time_to_float(sunset)+0.75], color="black")
+    # First make an orange bar for the sunset
     ax.barh([1], [time_to_float(sunset)], color="orange")
+    # Then make a black bar for sunset
+    ax.barh([1], [time_to_float(sunrise)], color="black")
+    
 
     # Vertical line to show current time
     ax.axvline(x=time_to_float(current), linewidth=1, color="black", ls="--")
@@ -32,7 +37,7 @@ def generate_sunrise_sunset_chart(
     )
 
     # Don't make the graph too wide
-    ax.set_xlim([time_to_float(sunrise), time_to_float(sunset)])
+    ax.set_xlim([time_to_float(sunrise)-0.75, time_to_float(sunset)+0.75])
 
     # No y-axis labels required
     ax.set_yticks([])
