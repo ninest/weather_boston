@@ -1,8 +1,8 @@
-Boston Weather, last updated 02:22 [[C](https://github.com/ninest/weather_boston/blob/main/README.md) | **K** | [F](https://github.com/ninest/weather_boston/blob/main/F-README.md)]
+Boston Weather, last updated 02:32 [[C](https://github.com/ninest/weather_boston/blob/main/README.md) | **K** | [F](https://github.com/ninest/weather_boston/blob/main/F-README.md)]
 
-# ☁️ Overcast clouds, 288.89ºK
+# ☁️ Overcast clouds, 288.91ºK
 
-Feels like 288.84ºK
+Feels like 288.87ºK
 
 |  | Temperature |
 | -- | -- |
