@@ -27,13 +27,14 @@ def generate_sunrise_sunset_chart(
 
     # x-axis labels should be the time
     ax.set_xticks(
-        [0, time_to_float(sunrise), 12, time_to_float(sunset), 24],
+        [time_to_float(sunrise), 12, time_to_float(sunset)],
     )
     ax.set_xticklabels(
-        ["", format_time(sunrise), "12:00", format_time(sunset), ""],
+        [format_time(sunrise), "12:00", format_time(sunset)],
     )
 
-    ax.set_xlim([4.0, 21.0])
+    # Don't make the graph too wide
+    ax.set_xlim([time_to_float(sunrise)-0.25, time_to_float(sunset)+0.25])
 
     # No y-axis labels required
     ax.set_yticks([])

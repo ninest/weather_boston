@@ -19,12 +19,12 @@ axes.linewidth: 2
 axes.edgecolor: 222222
 
 # Ticks
-xtick.direction: inout
-ytick.direction: inout
+xtick.direction: out
+ytick.direction: out
 
 # hide ticks
 xtick.top: False
-xtick.bottom: False
+xtick.bottom: True #want to show the small line above 12:00
 ytick.left: False
 ytick.right: False
 # xtick.major.width: 2
@@ -36,7 +36,7 @@ ytick.color: 222222
 # Fonts
 font.family: sans-serif
 font.sans-serif: Inter, Arial, Helvetica, sans-serif
-font.size: 12.0
+font.size: 16.0
 font.stretch: ultra-expanded
 
 axes.titlelocation: left
