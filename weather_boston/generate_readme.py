@@ -36,12 +36,10 @@ class README:
             self.temperature_unit, self.weather.temperature_feels_like
         )
 
-        sunrise_display_time = self.weather.sunrise.strftime("%H:%M")
         sunrise_natural_time = humanize.naturaltime(
             datetime.datetime.now() - self.weather.sunrise
         )
 
-        sunset_display_time = self.weather.sunset.strftime("%H:%M")
         sunset_natural_time = humanize.naturaltime(
             datetime.datetime.now() - self.weather.sunset
         )
@@ -59,10 +57,9 @@ Feels like {temperature_feels_like}
 
 ## Sun
 
-| | Time | Human |
-| -- | -- | -- |
-| Rise | {sunrise_display_time} | {sunrise_natural_time} |
-| Set | {sunset_display_time} | {sunset_natural_time} |
+Sunrise {sunrise_natural_time} and sunset {sunset_natural_time}.
+
+![Sunrise sunset chart](./assets/sun.png)
 
 ## Build setup
 
