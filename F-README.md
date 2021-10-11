@@ -1,4 +1,4 @@
-Boston Weather, last updated 02:32 [C](https://github.com/ninest/weather_boston/blob/main/README.md) | [K](https://github.com/ninest/weather_boston/blob/main/K-README.md) | **F**]
+Boston Weather, last updated 02:33 [C](https://github.com/ninest/weather_boston/blob/main/README.md) | [K](https://github.com/ninest/weather_boston/blob/main/K-README.md) | **F**]
 
 # ☁️ Overcast clouds, 60.4ºF
 
@@ -13,7 +13,7 @@ Feels like 60.3ºF
 
 Around 13 hours of sunlight. Sunrise 4 hours from now and sunset 15 hours from now.
 
-![Sunrise sunset chart](./assets/sun.png)
+![Sunrise sunset chart](./assets/sun-chart.png)
 
 ## Build setup
 

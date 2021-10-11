@@ -44,7 +44,7 @@ def generate_sunrise_sunset_chart(
     plt.tight_layout()
 
     fig.set_size_inches(7, 3)
-    fig.savefig("./assets/sun.png")
+    fig.savefig("./assets/sun-chart.png")
 
 
 if __name__ == "__main__":

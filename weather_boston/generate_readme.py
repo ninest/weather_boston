@@ -67,7 +67,7 @@ Feels like {temperature_feels_like}
 
 Around {self.weather.hours_sunlight} hours of sunlight. Sunrise {sunrise_natural_time} and sunset {sunset_natural_time}.
 
-![Sunrise sunset chart](./assets/sun.png)
+![Sunrise sunset chart](./assets/sun-chart.png)
 
 ## Build setup
 
