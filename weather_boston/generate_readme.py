@@ -44,7 +44,15 @@ class README:
             datetime.datetime.now() - self.weather.sunset
         )
 
-        return f"""Boston Weather, last updated {display_time}.
+        # Units
+        if self.temperature_unit == "C":
+            unit_change = """**C** | [K](https://github.com/ninest/weather_boston/blob/main/K-README.md) | [F](https://github.com/ninest/weather_boston/blob/main/F-README.md)"""
+        elif self.temperature_unit == "K":
+            unit_change = """[C](https://github.com/ninest/weather_boston/blob/main/README.md) | **K** | [F](https://github.com/ninest/weather_boston/blob/main/F-README.md)"""
+        else:
+            unit_change = """C](https://github.com/ninest/weather_boston/blob/main/README.md) | [K](https://github.com/ninest/weather_boston/blob/main/K-README.md) | **F**"""
+
+        return f"""Boston Weather, last updated {display_time} [{unit_change}]
 
 # {description}, {temperature}
 

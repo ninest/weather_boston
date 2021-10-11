@@ -1,4 +1,4 @@
-Boston Weather, last updated 02:16.
+Boston Weather, last updated 02:22 [C](https://github.com/ninest/weather_boston/blob/main/README.md) | [K](https://github.com/ninest/weather_boston/blob/main/K-README.md) | **F**]
 
 # ☁️ Overcast clouds, 60.3ºF
 
