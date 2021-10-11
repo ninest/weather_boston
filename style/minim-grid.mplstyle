@@ -1,0 +1,4 @@
+# Grid
+axes.grid: True
+axes.grid.axis: both
+grid.color: 111111

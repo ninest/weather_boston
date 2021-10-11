@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 
 from weather_boston.time import format_time, time_to_float
 
+plt.style.use("./style/minim.mplstyle")
+# plt.style.use('./style/minim-dark.mplstyle')
+
 
 def generate_sunrise_sunset_chart(
     sunrise: datetime.datetime,
@@ -30,12 +33,13 @@ def generate_sunrise_sunset_chart(
         ["", format_time(sunrise), "12:00", format_time(sunset), ""],
     )
 
-    ax.set_xlim([4.0,21.0])
+    ax.set_xlim([4.0, 21.0])
 
     # No y-axis labels required
     ax.set_yticks([])
 
-   
+    plt.tight_layout()
+
     fig.set_size_inches(7, 3)
     fig.savefig("./assets/sun.png")
 

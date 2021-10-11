@@ -1,0 +1,65 @@
+####
+# https://github.com/matplotlib/matplotlib/blob/master/lib/matplotlib/mpl-data/stylelib/classic.mplstyle
+# https://matplotlib.org/stable/gallery/color/named_colors.html
+# https://github.com/matplotlib/matplotlib/blob/master/lib/matplotlib/mpl-data/stylelib/fivethirtyeight.mplstyle
+####
+
+figure.figsize: 7,4
+figure.facecolor: white
+
+#axes.prop_cycle: cycler('color', ['tab:blue', 'tab:green', 'tab:orange', 'tab:purple', 'tab:red'])
+axes.prop_cycle: cycler('color', ['008fd5', 'fc4f30', 'e5ae38', '6d904f', '8b8b8b', '810f7c'])
+
+# Graph spin (Y on left, X on bottom)
+axes.spines.left: False #changed
+axes.spines.bottom: False #changed
+axes.spines.top: False
+axes.spines.right: False
+axes.linewidth: 2
+axes.edgecolor: 222222
+
+# Ticks
+xtick.direction: inout
+ytick.direction: inout
+
+# hide ticks
+xtick.top: False
+xtick.bottom: False
+ytick.left: False
+ytick.right: False
+# xtick.major.width: 2
+# ytick.major.width: 2 
+
+xtick.color: 222222
+ytick.color: 222222
+
+# Fonts
+font.family: sans-serif
+font.sans-serif: Inter, Arial, Helvetica, sans-serif
+font.size: 12.0
+font.stretch: ultra-expanded
+
+axes.titlelocation: left
+axes.titley: 1.1  # padding on top
+axes.titlesize: xx-large
+axes.titleweight: 700
+
+# Make X and Y start from origin (no padding)
+axes.xmargin: 0
+axes.ymargin: 0
+
+# X and Y label
+axes.labelpad: 10.0  # label padding
+axes.labelsize: medium  
+axes.labelweight: 400
+axes.labelcolor: 222222
+
+# Legend
+legend.frameon: False  # remove border
+legend.borderpad: 0.5
+legend.labelspacing: 0.2
+legend.handlelength: 1.0
+
+# Line graph
+lines.linewidth: 3  # line width
+

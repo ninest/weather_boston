@@ -20,6 +20,7 @@ class WeatherData:
 
     sunrise: datetime.datetime
     sunset: datetime.datetime
+    hours_sunlight:int
 
 
 class OpenWeatherMap:
@@ -37,15 +38,21 @@ class OpenWeatherMap:
         self.url = f"weather?lat={self.lat}&lon={self.lon}&appid={self.api_key}"
         data = self.fetch()
 
+        sunrise=datetime.datetime.fromtimestamp(data["sys"]["sunrise"])
+        sunset=datetime.datetime.fromtimestamp(data["sys"]["sunset"])
         return WeatherData(
             generation_time=datetime.datetime.now(),
+            
             description=data["weather"][0]["description"],
+            
             temperature=data["main"]["temp"],
             temperature_max=data["main"]["temp_max"],
             temperature_min=data["main"]["temp_min"],
             temperature_feels_like=data["main"]["feels_like"],
-            sunrise=datetime.datetime.fromtimestamp(data["sys"]["sunrise"]),
-            sunset=datetime.datetime.fromtimestamp(data["sys"]["sunset"]),
+            
+            sunrise=sunrise,
+            sunset=sunset,
+            hours_sunlight = round(((sunrise-sunset).seconds/60)/60)
         )
 
     def fetch(self):

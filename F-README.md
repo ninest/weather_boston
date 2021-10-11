@@ -1,8 +1,8 @@
-Boston Weather, last updated 02:05.
+Boston Weather, last updated 02:16.
 
 # ☁️ Overcast clouds, 60.3ºF
 
-Feels like 60.3ºF
+Feels like 60.2ºF
 
 |  | Temperature |
 | -- | -- |
@@ -11,7 +11,7 @@ Feels like 60.3ºF
 
 ## Sun
 
-Sunruse 4 hours from now and sunset 16 hours from now.
+Around 13 hours of sunlight. Sunrise 4 hours from now and sunset 15 hours from now.
 
 ![Sunrise sunset chart](./assets/sun.png)
 
